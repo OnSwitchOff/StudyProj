@@ -3,3 +3,23 @@ https://rajdee.gitbooks.io/redux-in-russian/content/
 https://egghead.io/courses/getting-started-with-redux
 https://howtorecover.me/cto-delaet-redux
 https://medium.com/devschacht/search?q=react%20native
+
+
+$.ajax({url:"https://api.unsplash.com/photos",
+  method:'get',
+  success:function(data){   
+   data.forEach(function(item){
+    let el=document.createElement('img');
+    el.setAttribute('src',item.user.profile_image.large);
+    console.log(item.user.profile_image.large);
+    document.querySelector('.cont').appendChild(el);
+   });
+   return data;
+  },
+  error:function(error){
+   console.log(error);
+  },
+  data:{
+   client_id:'cf49c08b444ff4cb9e4d126b7e9f7513ba1ee58de7906e4360afc1a33d1bf4c0'
+  }
+ }); 
