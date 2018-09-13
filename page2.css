@@ -1,0 +1,13 @@
+.categories{
+	max-height: 100px;
+	overflow-y: scroll;
+	border:1px solid black;
+	box-sizing: border-box;
+}
+
+.industries{
+	max-height: 100px;
+	overflow-y: scroll;
+	border:1px solid black;
+	box-sizing: border-box;
+}
