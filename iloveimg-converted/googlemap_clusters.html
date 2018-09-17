@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Marker Clustering</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      const url='https://api.hh.ru/vacancies?page=2';
+      const xhr= new XMLHttpRequest();
+      xhr.open('get',url,);
+      xhr.send();
+    </script>
+    <script>
+     var map;
+
+function initialize() {
+  var mapProp = {
+    center: new google.maps.LatLng(38, -78),
+    zoom: 6,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  map = new google.maps.Map(document.getElementById('map'), mapProp);
+};
+
+$(document).ready(function() {
+  var url = 'https://opendata.howardcountymd.gov/resource/96q9-qbh7.json';
+  initialize();
+  $.getJSON(url, function(data) {
+    $.each(data, function(i, field) {
+      $('#list').append("<li>" + data[i].location.longitude + " & " + data[i].location.latitude + "</li>");
+      createMarker(data);
+
+      function createMarker(data) {
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(data[i].location.latitude, data[i].location.longitude),
+          map: map,
+          title: field.crossroad
+        });
+      };
+    });
+  });
+
+});
+
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+     <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHOfCKisHSi-L7GanqSDr_KZk7G8-4i9o&callback=initMap">
+    </script>
+  </body>
+</html>

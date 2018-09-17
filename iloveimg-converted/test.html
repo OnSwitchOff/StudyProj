@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <header>
+      <div class="darkLine"></div>
+      <div class="lightLine">
+        <div class="wrapper">
+          <div class="logo"><img src="logo.png"></div>
+          <div class="nav">
+            <div class="signs">
+              <div class="sign In">Sign in</div>
+              <div class="sign Up">Sign up</div>
+              <div class="sign Out none">Sign out</div>
+            </div>
+            <div class="tabs">
+              <div class="tab home active">HOME</div>
+              <div class="tab advSearch">SEARCH JOB</div>
+              <div class="tab browse">BROWSE</div>
+              <div class="tab postResume">POST RESUME</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+
+      <div class="wrapper page1">
+        <div class="leftCol">
+          <div class="fastSearch">
+            <h2>FIND JOBS</h2>
+            <form>
+              <div class="keywords">
+                <label for="keywords">Keywords:</label>
+                  <input type="text" name="keywords" id="keywords">
+              </div>
+              <div class="location autocomplete">
+                <label for="location">Location:</label>
+                  <input type="text" class='wrong' name="location" id="location">
+              </div>
+              <div class="submit">
+                <div class="subBut">FIND JOBS</div>
+                  <a href="#">Advanced Search</a>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+        <div class="rightCol">
+          
+        </div>
+      </div>
+
+      <div class="wrapper page3">
+        <div class="leftCol">
+          <div class="sideMenu">
+            <h2>BROWSE JOBS BY</h2>
+            <div class="Location"></div>
+            <div class="Category"></div>
+            <div class="JobType"></div>
+            <div class="DatePosted"></div>
+            <div class="Comnpany"></div>
+            <div class="Industry"></div>
+            <div class="CareerLevel"></div>
+            <div class="EducationLevel"></div>
+            <div class="Expirience"></div>
+          </div>
+        </div>
+        <div class="rightCol">
+          <div class="title">Result</div>
+          <div class="navMenu">
+            <did class="sort">
+              <span class="sortBy">Sort by:</span>
+              <select name="order">
+                <option value="date">date</option>
+                <option value="name">name</option>
+              </select>
+            </did>
+            <div class="pageNav">
+              <span class='prev'>Prev</span>
+              <span class="currentPage"></span>
+              <span class="totalpages"></span>
+              <span class='next'>Next</span>
+            </div>
+          </div>
+          
+          <div class="browse">
+           
+          </div>
+        </div>        
+      </div>
+  
+      <div id="map"></div>
+
+    </main>
+    <footer>
+      
+    </footer>
+	
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+
+
+
+<script src="vacancyRender.js"></script>
+<script src="options.js"></script>
+<script src="Data.js"></script>
+<script src="autocomplete.js"></script>
+<script src="AJAXrequests.js"></script>
+<script src='Promise.js'></script>
+<script src="axios.js"></script>
+<script src="searchEvents.js"></script>
+<script src='main.js'></script>
+<script src="gMapRender.js"></script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHOfCKisHSi-L7GanqSDr_KZk7G8-4i9o&callback=initMap"></script>
+
+
+</html>
