@@ -24,16 +24,17 @@ $.ajax({url:"https://api.unsplash.com/photos",
   }
  }); 
  
- function get() {
-    axios.get('url').then(function(response) {
-        if (response.does.not.fit.yours.needs) {
-            get();
-        } else {
-            // all done, ready to go!
-        }
-    });
-}
+let i = 0;
+axiosReq(base+initVocData[i].url,i)  
+.then(()=>{
+ i++;
+ if(i<initVocData.length){
+  axiosReq(base+initVocData[i].url,i);
+  }
+  else{
+   console.log(outVocData);
+  }
+ });
 
-get();
  
  https://learn.javascript.ru/screencast/react
