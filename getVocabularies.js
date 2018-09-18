@@ -1,5 +1,3 @@
-/*const axios = require('axios');*/
-
 const base="https://api.hh.ru/";
 
 const initVocData=[  
@@ -16,8 +14,7 @@ const searchName = function(dataObj,fromArr){
   for (let i = 0; i < fromArr.length; i++) {  
     result=result[fromArr[i]];
   }
-  console.log(typeof(result));
-  return result.map((value)=>value.name);
+  return result.map(function(value) {return value.name});
 }
 
 /*
@@ -29,9 +26,8 @@ const axiosReq=function(url,index){
    axios.get(url)
     .then(function (response) {
      let tempObjArr=[];
-     (response.data).forEach((value)=>{(searchName(value,(initVocData[index].from))).forEach((value)=>tempObjArr.push(value))});
+     (response.data).forEach(function(value){(searchName(value,(initVocData[index].from))).forEach(function(value){tempObjArr.push(value)})});
       outVocData.push({vocName:initVocData[index].url,vocValList:_.uniq(tempObjArr)});
-     console.log(outVocData);
     })
     .catch(function (error) {
       console.log(error);
@@ -39,8 +35,24 @@ const axiosReq=function(url,index){
 }
 
 
-for (let i = 0; i < initVocData.length;i++) {
+/*for (let i = 0; i < initVocData.length;i++) {
     axiosReq(base+initVocData[i].url,i);  
-}
+}*/
 
+let i=0;
 
+const getVocData=function(initVocData){
+  axiosReq(base+initVocData[i].url,i)
+  .then(function(){
+    i++;
+    console.log(i);
+    if (i<initVocData.length) {
+      getVocData();
+    }
+    else{
+      console.log(outVocData);
+    }
+  });
+};
+
+getVocData(initVocData);

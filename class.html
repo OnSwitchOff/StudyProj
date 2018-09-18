@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
-	
+	<link rel="stylesheet" type="text/css" href="advStyle.css">
 </head>
 <body>
 	<div class="industries"></div>
@@ -12,11 +12,17 @@
 	<div class="Categories"></div>
 	<div class="salary">
 		<h2>Salary Range</h2>
-		<label>from<input type="text" name="from"/></label>
-		<label>to<input type="text" name="to"/></label>
+		<input type="text" name="from" value='0%'/>
+		<input type="text" name="to" value='100%'/>
+		<div class="rangeLine">
+			<div class="leftLim"></div>
+			<div class="activeRange"></div>
+			<div class="rightLim"></div>
+		</div>
 	</div>
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="salaryRange.js"></script>
+	<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
-	<script type="text/javascript" src="getVocabularies.js"></script>
+	<script type="text/javascript" src="getVocabularies.js"></script> -->
 </body>
 </html>
