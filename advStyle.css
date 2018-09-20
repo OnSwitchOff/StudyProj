@@ -7,16 +7,16 @@
 	flex-direction: column;
 	justify-content: center;
 	border:1px solid blue;
-	background-color: grey;
+	background-color: lightgrey;
 	align-items: center;
 }
 
 .salary .rangeLine{
 	width:80%;
 	height: 10px;
-	border:1px solid black;
+	border:1px solid   grey   ;
 	border-radius: 5px;
-	background-color: white;
+	background-color: #FFD700 ;
 	margin:30px 0;
 	position: relative;
 	z-index:1;
@@ -25,11 +25,15 @@
 .salary .leftLim{
 	position: absolute;
 	width:16px;
-	height: 16px;
-	border:1px solid white;
+	height:16px;
+	border:1px solid  black  ;
+	/*border-top:8px solid transparent;
+	border-bottom:8px solid transparent;
+	border-right:8px solid transparent;
+	border-left: 8px solid green;*/
 	border-radius: 50%;
-	background-color: green;
-	top:-4px;
+	background-image: repeating-radial-gradient(black 0%,#ADFF2F 20%);
+	top:-4.5px;
 	z-index: 3;
 }
 
@@ -37,18 +41,37 @@
 	position: absolute;
 	width:16px;
 	height: 16px;
-	border:1px solid white;
+	border:1px solid  black ;
 	border-radius: 50%;
-	background-color: red;
-	top:-4px;
+	background-image: repeating-radial-gradient(black 0% ,#ADFF2F 20% );
+	top:-4.5px;
 	z-index:3;
 }
 
 .salary .activeRange{
 	position: absolute;
 	height:10px;
-	background-color: lightblue;
+	background-image: repeating-linear-gradient(-45deg,#00BFFF 2%,black 8%);
 	top:-1px;
-	border:1px solid black;
+	border:1px solid   black ;
 	z-index: 2;
 }
+
+.salary .leftLim:hover{
+	cursor: pointer;
+}
+.salary .rightLim:hover{
+	cursor: pointer;
+}
+
+/*.salary .leftLim::before{
+	display: block;
+	position: absolute;
+	top:-15px;
+	left:1px;
+	content:'';
+	width: 10px;
+	height: 10px;
+	background-color: pink;
+	border:1px solid green;
+}*/

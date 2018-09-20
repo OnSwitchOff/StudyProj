@@ -12,14 +12,15 @@
 	<div class="Categories"></div>
 	<div class="salary">
 		<h2>Salary Range</h2>
-		<input type="text" name="from" value='0%'/>
-		<input type="text" name="to" value='100%'/>
+		<input type="text" name="from" value='0'/>
+		<input type="text" name="to" value='0'/>
 		<div class="rangeLine">
-			<div class="leftLim"></div>
-			<div class="activeRange"></div>
+			<div class="leftLim draggable"></div>
+			<div class="activeRange draggable"></div>
 			<div class="rightLim"></div>
 		</div>
 	</div>
+	<script   src="https://code.jquery.com/jquery-3.3.1.js"   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="   crossorigin="anonymous"></script>
 	<script src="salaryRange.js"></script>
 	<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
